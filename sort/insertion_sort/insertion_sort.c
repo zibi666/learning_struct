@@ -49,6 +49,8 @@ void Straight_Insertion_Sort(int* table,int length)
     }
 }
 
+//实现折半插入排序
+
 
 
 int main(){
