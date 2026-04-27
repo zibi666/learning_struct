@@ -1,15 +1,7 @@
 #include <stdio.h>
-#include <windows.h>
+#include <array_utils.h>
 
 
-//生成有序数组(1-100)
-void set_table(int* table,int length)
-{
-    for(int i = 0;i<length;i++)
-    {
-        table[i] = i+1;
-    }
-}
 
 int binary_search(int table[],int len,int* cnt,int target)
 {
@@ -39,9 +31,6 @@ int binary_search(int table[],int len,int* cnt,int target)
 
 int main()
 {
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
-
     int receive_table[100] = {0};
 
     //寻找哪个数字
@@ -55,16 +44,16 @@ int main()
     //生成数组
     set_table(receive_table,length);
 
-    printf("请输入你需要寻找的数字:\n");
+    printf("please write which number to find(1-100):\n");
     scanf("%d",&target);
 
     int result = binary_search(receive_table,length,&count,target);
     if(result<0)
     {
-        printf("已为您寻找了:%d次,很抱歉没找到\n",count);
+        printf("find_count:%d , but we cannot find\n",count);
     }
     else
     {
-        printf("已为您寻找了:%d次,位于第%d位\n",count,result);
+        printf("find_count:%d , it at %d\n",count,result);
     }
 }

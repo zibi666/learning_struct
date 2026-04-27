@@ -1,27 +1,8 @@
 #include <stdio.h>
 #include <windows.h>
+#include <array_utils.h>
 
 
-//获取数组
-void get_table(int* table,int length)
-{
-    for(int i = 0;i<length;i++)
-    {
-        printf("请输入你的数字(第%d个)\n",i);
-        scanf("%d",&table[i]);
-    }
-}
-
-
-//打印数组
-void print_table(int table[10])
-{
-    for(int i = 0;i<10;i++)
-    {
-        printf("%d ",table[i]);
-    }
-    printf("\n");
-}
 
 
 //实现直接插入排序
@@ -52,10 +33,7 @@ void Straight_Insertion_Sort(int* table,int length)
 //实现折半插入排序
 
 
-
 int main(){
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
 
     int receive_table[10] = {0};
     //求数组长度
@@ -63,11 +41,11 @@ int main(){
 
     //获取数组
     get_table(receive_table,length);
-    printf("排序前数组如下:\n");
-    print_table(receive_table);
+    printf("before sort:\n");
+    print_table(receive_table,length);
 
     Straight_Insertion_Sort(receive_table,length);
-    printf("排序后数组如下:\n");
-    print_table(receive_table);
+    printf("after sort:\n");
+    print_table(receive_table,length);
     return 0;
 }
