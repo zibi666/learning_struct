@@ -13,3 +13,11 @@ add_executable(insertion_sort
 target_link_libraries(insertion_sort PRIVATE
         common
 )
+
+add_executable(qiuck_sort
+        qiuck_sort/qiuck_sort.c
+)
+
+target_link_libraries(qiuck_sort PRIVATE
+        common
+)

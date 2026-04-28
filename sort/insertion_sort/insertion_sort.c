@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <windows.h>
 #include <array_utils.h>
-
 
 
 
